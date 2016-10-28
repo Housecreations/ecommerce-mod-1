@@ -338,7 +338,7 @@ $(document).ready(function(){
     
     
     
-      $("#shopping_cart_form").on("submit", function(ev){
+      $(".shopping_cart_form").on("submit", function(ev){
        ev.preventDefault();
         
         var $form = $(this);

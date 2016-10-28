@@ -5,7 +5,7 @@
        <div class="responsive_menu">
         <ul class="main_menu">
            
-					            <li><a href="/QuienesSomos">Nosotros</a>
+					            <li><a href="/quienes-somos">Nosotros</a>
                                    
                                     <li><a href="/articulos">Categorías</a>
 					            	<ul>
@@ -74,7 +74,7 @@
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
 								
-					            <li><a href="/QuienesSomos">Nosotros</a>
+					            <li><a href="/quienes-somos">Nosotros</a>
                                    
                                     <li><a href="/articulos">Categorías</a>
 					            	<ul>

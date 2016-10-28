@@ -1,12 +1,12 @@
-@extends('admin.templates.productos')
+@extends('admin.templates.principal')
 
 
 @section('title', 'Carrito de compras')
 
 
 @section('content')
-
-<div class="col-md-10 col-sm-10 col-xs-10 items card">
+<div class="container">
+<div class="items">
 
 <ol class="breadcrumb bc text-center">
   <li><a href="/">Inicio</a></li>
@@ -95,6 +95,7 @@
 
 @endif
 @endif
+</div>
 </div>
 
 @endsection

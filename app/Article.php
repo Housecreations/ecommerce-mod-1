@@ -21,7 +21,7 @@ class Article extends Model implements SluggableInterface
     
     protected $table = "articles";
     
-    protected $fillable = ['name', 'description', 'category_id', 'ondiscount', 'stock', 'discount', 'price', 'price_now'];
+    protected $fillable = ['name', 'description', 'category_id', 'ondiscount', 'stock', 'discount', 'price', 'price_now', 'featured'];
     
     
     

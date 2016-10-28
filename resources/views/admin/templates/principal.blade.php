@@ -92,10 +92,10 @@
             
             <h2>Atención al cliente</h2>
             <ul>
-            <li><a href="">¿Cómo comprar?</a></li>
-           <li><a href="">Política de privacidad</a></li>
-           <li><a href="">Términos y condiciones</a></li>
-           <li><a href="">Pagos y envíos</a></li>
+            <li><a href="{{url('/como-comprar')}}">¿Cómo comprar?</a></li>
+           <li><a href="{{url('/politica-privacidad')}}">Política de privacidad</a></li>
+           <li><a href="{{url('/terminos-y-condiciones')}}">Términos y condiciones</a></li>
+           <li><a href="{{url('/pagos-y-envios')}}">Pagos y envíos</a></li>
            
            
             </ul>

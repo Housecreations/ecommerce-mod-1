@@ -18,9 +18,11 @@ class WelcomeController extends Controller
         
     $carousel = CarouselImage::all();
     
+    $featuredArticles = Article::where('featured', 'yes')->get();
+    
     $newArticles = Article::orderBy('id', 'DESC')->take(4)->get();    
 
-    return view('welcome', ['carousel' => $carousel, 'newArticles' => $newArticles, 'currency' => Config::find(1)->currency, 'front_images' => FrontImage::all()]);  
+    return view('welcome', ['carousel' => $carousel, 'newArticles' => $newArticles, 'currency' => Config::find(1)->currency, 'front_images' => FrontImage::all(), 'featuredArticles' => $featuredArticles]);  
         
         
     }

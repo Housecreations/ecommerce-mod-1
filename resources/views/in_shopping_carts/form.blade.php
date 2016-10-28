@@ -1,4 +1,4 @@
-{!! Form::open(['url' => '/in_shopping_carts', 'method' => 'POST', 'id' => 'shopping_cart_form']) !!}
+{!! Form::open(['url' => '/in_shopping_carts', 'method' => 'POST', 'class' => 'shopping_cart_form']) !!}
 
 <input type="hidden" name="article_id" value="{{$article->id}}">
 

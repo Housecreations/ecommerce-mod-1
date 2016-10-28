@@ -2,7 +2,10 @@
 
 @section('title', "HouseCreations Shop") 
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/flexslider.css')}}">
 
+@endsection
 
 @section('content') 
 
@@ -80,32 +83,10 @@
 <div class="container new-products">
   <hr class="hr">
   
-  <h2 class="text-center related-title"> Artículos recientes</h2>
-   
-   <div class="col-md-12">
-                                
-     @foreach($newArticles as $article)
-                                 <div class="col-md-3">
-                                
-                                 <a href="{{url('/articulos/'.$article->category->slug.'/'.$article->slug)}}">
-                                 
-                                 @if($article->discount > 0)
-                    <div class="oferta">{{$article->discount}}% de descuento</div>
-                    @endif
-                                 
-                                 
-                                  <img class="recent-articles" src="/images/articles/{{$article->images[0]->image_url}}" alt="Slide {{$article->id}}"/>
-                                 
-                                 <span class="text-center related-title">{{$article->name}}</span>
-                                  <span class="text-center related-price">{{$article->price_now}} {{$currency}}</span>
-                                 
-                                  </a>
-                                
-                            
-                              </div>
-                              @endforeach
-                              
-                    </div>   
+  
+  @include('admin.templates.partials.featured-articles') 
+  
+ 
     
 </div>
 
@@ -130,6 +111,61 @@
     </div>
     
    
+</div>
+
+
+<div class="container new-products">
+  <hr class="hr">
+  
+  <h2 class="text-center related-title"> Artículos recientes</h2>
+   
+   <div class="col-md-12">
+                                
+     @foreach($newArticles as $article)
+                                
+                                
+                                
+                                
+                                <div class="wow fadeInUp col-md-3" data-wow-delay="0.4s">
+                    <div class="about-thumb">
+                     
+                     @if($article->discount > 0)
+                    <div class="oferta">{{$article->discount}}% de descuento</div>
+                    @endif
+                     
+                      <a href="{{url('/articulos/'.$article->category->slug.'/'.$article->slug)}}">
+                       
+                        <img class="recent-articles" src="/images/articles/{{$article->images[0]->image_url}}" alt="Slide {{$article->id}}"/>
+                              <div class="about-overlay">
+                                   <h3>{{$article->name}}</h3>
+                                   <h4>{{$article->price_now}} {{$currency}}</h4>
+                            @if(Auth::user())
+                            @if(Auth::user()->type == 'member')
+                            @if($article->stock > 0)      
+                             
+                             @include('in_shopping_carts.form', ['article' => $article])
+                            
+                            @endif
+                            @endif
+                            @else
+                            @if($article->stock > 0)      
+                            
+                            
+                             @include('in_shopping_carts.form', ['article' => $article])
+                            
+                            @endif
+                            @endif
+                                       
+                                 
+                              </div>
+                              </a>
+                    </div>
+               </div>
+                            
+                              @endforeach
+                              
+                    </div>   
+    
 </div>
 
 
@@ -177,6 +213,8 @@ $(function() {
 </script>
 
 
+
+ <script src="{{ asset('js/articles-slider/jquery.flexslider.min.js') }}"></script>
 
 
  

@@ -28,6 +28,7 @@ class AddArticlesTable extends Migration
             $table->double('price_now', 10, 2);
             $table->enum('ondiscount',['yes','no'])->default('no');
            $table->enum('visible',['yes','no'])->default('yes');
+           $table->enum('featured',['yes','no'])->default('no');
           
             $table->timestamps();
         });

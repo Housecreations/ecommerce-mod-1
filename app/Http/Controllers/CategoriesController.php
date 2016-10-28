@@ -41,9 +41,21 @@ class CategoriesController extends Controller
      */
     public function store(CategoryRequest $request)
     {
+        
+        
+        if($request->file('image')){
+            
+            $file = $request->file('image');
+            $name = 'E-commerce_' .time(). "." . $file->getClientOriginalExtension();
+            $path = 'images/categories/';
+            $file->move($path, $name);
+        
+        }
+        
             $category = new Category($request->all());
+            $category->image_url = $name;
             $category->save();
-            Flash::success("Área registrada");
+            Flash::success("Categoría registrada");
         
             return redirect()->route('admin.categories.index');
   
@@ -82,10 +94,33 @@ class CategoriesController extends Controller
      
         $category = Category::find($id);
         $category->fill($request->all());
-        $category->slug = null;
-        $category->save();
         
-        Flash::success('El área se editó con éxito');
+        if($request->file('image')){
+            
+            $file = $request->file('image');
+            $name = 'E-commerce_' .time(). "." . $file->getClientOriginalExtension();
+            $path = 'images/categories/';
+            $file->move($path, $name);
+            
+             unlink(public_path()."\images\categories\\".$category->image_url);
+        
+            /* unlink("/home2/dsistema/public_html/images/articles/".$image->image_url);*/
+            
+            
+            $category->image_url = $name;
+            
+            
+        }
+        
+            
+          
+            
+            $category->slug = null;
+            $category->save();
+            Flash::success("Categoría editada con éxito");
+        
+            return redirect()->route('admin.categories.index');
+        
        
         return redirect()->route('admin.categories.index');
     }
@@ -99,6 +134,10 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+        
+         unlink(public_path()."\images\categories\\".$category->image_url);
+        
+         /* unlink("/home2/dsistema/public_html/images/articles/".$image->image_url);*/
         
         foreach($category->articles as $article){
             

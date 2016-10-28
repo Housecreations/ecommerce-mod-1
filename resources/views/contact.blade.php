@@ -68,7 +68,7 @@
 
 
 
-<div class="col-md-12 col-sm- col-xs-12">
+<div class="col-md-12 col-sm- col-xs-12 recap">
 <div class="form-group">
    
    <div class="g-recaptcha" data-sitekey="{{ env('RE_CAP_SITE') }}"></div>

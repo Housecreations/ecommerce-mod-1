@@ -20,7 +20,7 @@ Route::post('/deleteNoUserCarts', 'ShoppingCartsController@eliminarcarritos');
 Route::get('/tags/{tag}', function ($tag) {
    
     
-   $articles = App\Tag::where('slug', '=', $tag)->first()->articles()->where('visible', '=', 'yes')->orderBy('article_id', 'DESC')->get();
+   $articles = App\Tag::where('slug', '=', $tag)->first()->articles()->where('visible', '=', 'yes')->orderBy('article_id', 'DESC')->simplePaginate(8);
 
    $tag = App\Tag::where('slug', '=', $tag)->first();
   
@@ -115,8 +115,11 @@ Route::get('/articulos', function () {
      
     
     $categoriescat = App\Category::orderBy('id', 'DESC')->get();
+    
+     $featuredArticles = App\Article::where('featured', 'yes')->get();
+    
 
-    return view('showCategories')->with('categoriescat', $categoriescat);
+    return view('showCategories',['categoriescat' => $categoriescat, 'featuredArticles' => $featuredArticles, 'currency' => App\Config::find(1)->currency]);
 });
 
 
@@ -125,9 +128,15 @@ Route::get('/articulos', function () {
 Route::get('/articulos/{category}', function ($cat) {
      
     
-    $articles = App\Category::where('slug', '=', $cat)->first()->articles()->where('visible', '=', 'yes')->orderBy('id', 'DESC')->get();
+    $articles = App\Category::where('slug', '=', $cat)->first()->articles()->where('visible', '=', 'yes')->orderBy('id', 'DESC')->simplePaginate(8);
     $currency = App\Config::find(1);
-    return view('show', ['articles' => $articles, 'currency' => $currency->currency]);
+    
+    $featuredArticles = App\Article::where('featured', 'yes')->get();
+    
+    return view('show', ['articles' => $articles, 'currency' => $currency->currency, 'featuredArticles' => $featuredArticles]);
+    
+   
+    
 });
 
 
@@ -172,9 +181,33 @@ Route::get('articulos/{category}/{slug}', [ 'as' => 'mostrar.articulo', function
 }]);
 
 
-Route::get('/QuienesSomos', function () {
+Route::get('/quienes-somos', function () {
    
     return view('whoweare');
+    
+});
+
+Route::get('/como-comprar', function () {
+   
+    return view('howtobuy');
+    
+});
+
+Route::get('/politica-privacidad', function () {
+   
+    return view('privacypolicy');
+    
+});
+
+Route::get('/terminos-y-condiciones', function () {
+   
+    return view('termsconditions');
+    
+});
+
+Route::get('/pagos-y-envios', function () {
+   
+    return view('paysandshipment');
     
 });
 
@@ -185,7 +218,7 @@ Route::get('/QuienesSomos', function () {
 
 Route::get('/descuentos', function () {
    
-    $articles = App\Article::where('ondiscount', '=', 'yes')->where('visible', '=', 'yes')->orderBy('id', 'DESC')->get();
+    $articles = App\Article::where('ondiscount', '=', 'yes')->where('visible', '=', 'yes')->orderBy('id', 'DESC')->simplePaginate(8);
   $currency = App\Config::find(1);
   
     return view('showoutlet', ['articles' => $articles, 'currency' => $currency->currency]);

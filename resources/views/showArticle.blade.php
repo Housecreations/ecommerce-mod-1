@@ -276,17 +276,40 @@
      @foreach($relatedArticles as $article_related)
                                  
                                  <li>
-                                 <a href="{{url('/articulos/'.$article_related->category->slug.'/'.$article_related->slug)}}">
                                  
-                                
-                                  <img src="/images/articles/{{$article_related->images[0]->image_url}}" alt="Slide {{$article_related->id}}"/>
                                  
-                                  <span class="text-center related-title">{{$article_related->name}}</span>
-                                  
-                                   <span class="text-center related-price">{{$article_related->price}} {{$currency}}</span>
                                  
-                                  </a>
-                                
+                    <div class="about-thumb">
+                      <a href="{{url('/articulos/'.$article_related->category->slug.'/'.$article_related->slug)}}">
+                       
+                        <img class="recent-articles" src="/images/articles/{{$article_related->images[0]->image_url}}" alt="Slide {{$article_related->id}}"/>
+                              <div class="about-overlay">
+                                   <h3>{{$article_related->name}}</h3>
+                                   <h4>{{$article_related->price_now}} {{$currency}}</h4>
+                            @if(Auth::user())
+                            @if(Auth::user()->type == 'member')
+                            @if($article_related->stock > 0)      
+                             
+                             @include('in_shopping_carts.form', ['article' => $article_related])
+                            
+                            @endif
+                            @endif
+                            
+                            @else
+                            @if($article_related->stock > 0)      
+                            
+                            
+                             @include('in_shopping_carts.form', ['article' => $article_related])
+                            
+                            @endif
+                            @endif
+                                       
+                                 
+                              </div>
+                              </a>
+                    </div>
+              
+                           
                               </li>
                               
                               @endforeach

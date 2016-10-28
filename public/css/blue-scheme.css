@@ -6,6 +6,73 @@ http://www.templatemo.com/preview/templatemo_460_medigo
 
 */
 
+p.text-center.cat-p {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    color: #252525;
+}
+
+.new-products .flexslider {
+   
+    border: none !important;
+}
+
+img.img-categories {
+    height: 300px;
+}
+
+.about-thumb {
+    margin-bottom: 32px;
+    position: relative;
+    text-align: center;
+    /* padding: 5px; */
+    padding-left: 5px;
+}
+
+.about-thumb a.button.button-lg {
+    margin-top: 20px;
+}
+
+.about-overlay h3 {
+    color: #252525;
+     font-size: 18px;
+
+}
+
+.about-overlay h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.about-overlay {
+    background-color: rgba(250,250,250,0.9);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    transition: height 450ms;
+}
+.about-thumb:hover .about-overlay {
+    height: 100%;
+    background-color: #ffffff;
+    color: #222;
+    padding-top: 30%;
+    opacity: 0.9;
+    transition: all 0.5s;
+}
+
+
+.col-md-12.col-sm-.col-xs-12.recap {
+    padding: 0;
+}
+.contact-section .form-group {
+    padding: 0;
+    padding-top: 10px;
+}
+
 .contact-section ul {
     list-style: none;
     padding: 0;
@@ -253,6 +320,12 @@ li.flex-active-slide {
     margin-bottom: 5%;
     padding-left: 0px;
     padding-right: 0px;
+    
+    
+    
+        /*display: inline-block;
+    width: 100%;*/
+    
 }
 hr.hr {
     /* color: #ff6600; */
@@ -524,14 +597,14 @@ a.tag {
    color: #ffffff;
     background: #00c8ff;
 }*/
-.tags h4 {
+/*.tags h4 {
        background-color: #00a8d6;
     text-align: center;
     color: white;
     border-radius: 2px 2px;
     padding: 2px;
     font-size: 18px;
-}
+}*/
 
 
 
@@ -1042,12 +1115,12 @@ button.button-on:hover{
     top: 0;
     /* right: 35px; */
     z-index: 1;
-    background-color: #252525;
+    background-color: #ff6600;
     color: white;
     padding: 5px;
     /* border-radius: 0px 0px 10px 10px; */
     font-size: 14px;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
 }
 
@@ -1134,7 +1207,7 @@ td.cart-header {
     padding: 15px 0px 15px 0px;
     text-align: center;
     color: white;
-        background-color: #00a8d6;
+        background-color: #ff6600;
      border: none !important;
         height: 50px;
     font-size: 20px;
@@ -1150,7 +1223,7 @@ tbody.cart-tbody td {
     padding: 20px !important;
 }
 .cart-tbody a {
-       background-color: #00a8d6;
+       background-color: #ff6600;
     padding: 10px;
     border-radius: 5px;
     color: white;
