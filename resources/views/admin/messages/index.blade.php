@@ -7,9 +7,9 @@
 
 
 
+<div class="container">
 
-
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-12 card">
+<div class="items">
 
 
 <div class="col-md-12">
@@ -66,6 +66,7 @@
     {{$messages->render()}}
 </div>
 
+</div>
 </div>
 @endsection
 

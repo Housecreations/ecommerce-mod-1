@@ -4,13 +4,14 @@
 
 
 @section('content') 
-<div class="container-fluid users msg">
+
+<div class="container">
+
+<div class="items">
 
 
 
-<div class="col-md-1"></div>
 
-<div class="col-md-10 card">
 
 <a href="{{ route('admin.messages.index')}}" class="button button-sm">Atrás</a>
 <hr>
@@ -30,5 +31,6 @@
 </div>
 </div>
 </div>
+
 </div>
 @endsection

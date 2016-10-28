@@ -1,14 +1,21 @@
-@extends('admin.templates.productos')
+@extends('admin.templates.principal')
 
 
 @section('title', 'Checkout')
 
 
 @section('content')
+<div class="container">
+<div class="items">
 
-<div class="col-md-10 items card">
+<ol class="breadcrumb bc text-center">
+  <li><a href="/">Inicio</a></li>
 
-<h4>Checkout</h4><span>Verifique bien los datos, una vez cargados no podrá modificarlos</span>
+    <li class="active">Checkout</li>
+  <hr>
+</ol>
+
+<h1 class="text-left categories-title">Checkout</h1><span>Verifique bien los datos, una vez cargados no podrá modificarlos</span>
 <h4>¡IMPORTANTE!</h4><span>Una vez realizado el pago en la plataforma MercadoPago, haga clic en 'continuar' para ser redireccionado de vuelta a la aplicación</span>
 
 
@@ -117,6 +124,6 @@
 
 {!! Form::close() !!}
 </div>
-
+</div>
 
 @endsection

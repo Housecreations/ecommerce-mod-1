@@ -1,4 +1,4 @@
-@extends('admin.templates.productos')
+@extends('admin.templates.principal')
 
 @section('title', 'Panel de ' . Auth::user()->name) 
 
@@ -6,8 +6,8 @@
 @section('content') 
   
   
-
-   <div class="items col-md-10 col-sm-10 col-xs-10 card">
+<div class="container">
+   <div class="items">
    
     <div class="col-md-12 col-sm-12 col-xs-12 user-nav">
    <div class="col-md-6 col-sm-6 col-xs-6">
@@ -145,5 +145,5 @@
    @endif
    
 </div>
-   
+   </div>
 @endsection

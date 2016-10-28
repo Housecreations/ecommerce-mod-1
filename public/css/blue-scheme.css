@@ -6,11 +6,43 @@ http://www.templatemo.com/preview/templatemo_460_medigo
 
 */
 
+.margin-bottom{
+    
+    margin-bottom: 80px;
+    
+}
+
+.button-featured {
+    background-color: #ff6600;
+    color: white;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.no-featured {
+    opacity: 0.5;
+}
+
+a.share {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+p.description {
+    padding-top: 10px;
+}
+
 p.text-center.cat-p {
     font-size: 18px;
     font-style: italic;
     font-weight: 500;
     color: #252525;
+}
+
+.items.login {
+    padding-bottom: 140px;
 }
 
 .new-products .flexslider {
@@ -135,10 +167,13 @@ img.img-categories {
     margin-left: 0px;
     margin-right: 0px;
     width: 100%;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 50px;
 }
 
+.pre-footer .col-md-4 {
+    margin-top: 50px;
+}
 
 .col-md-4.col-sm-4.col-xs-12.admin-item-content {
    
@@ -1945,11 +1980,12 @@ a.menu-toggle-btn i {
 }
 
 .responsive_menu {
-  padding: 20px;
+    padding: 20px;
     background-color: rgb(31, 33, 36);
     display: none;
-    position: absolute;
-    margin-top: 90px;
+    position: fixed;
+    margin-top: 60px;
+    padding-top: 50px !important;
     z-index: 999999;
 }
 

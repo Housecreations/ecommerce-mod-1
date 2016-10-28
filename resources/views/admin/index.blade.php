@@ -87,7 +87,11 @@
            
            <div class="templatemo-gallery-item collection col-md-12 front">
            
-           <a href="{{route('admin.front-images.edit')}}">as</a>
+           <a href="{{route('admin.front-images.edit')}}">
+               
+               <img src="" alt="">
+               
+           </a>
       </div>
            
        </div>

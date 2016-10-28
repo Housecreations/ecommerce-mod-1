@@ -92,6 +92,26 @@
 @endif
 
 {!! Form::close() !!}
+                                                 
+                                                 
+ {!! Form::open(['route' => ['admin.featured', $article->id], 'method' => 'POST', 'id' => "featured_form_$article->id", 'class' => 'visible form-featured']) !!}
+
+<input type="hidden" name="article_id" value="{{$article->id}}">
+
+ 
+
+       
+@if($article->featured == 'yes')
+<button type="submit" class="button-featured ">
+   Destacado
+</button>
+@else
+<button type="submit" class="button-featured no-featured">
+   No destacado
+</button>
+@endif
+
+{!! Form::close() !!}
                                                   
                     
                         

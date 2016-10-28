@@ -390,6 +390,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     ]);
    
     
+    Route::post('/featured/{id}', [
+    'uses' => 'FrontController@featured',
+    'as' => 'admin.featured'
+    ]);
+   
+    
+    
     Route::get('/password', [
     'uses' => 'UsersController@editPassword',
     'as' => 'admin.password.edit'

@@ -1,5 +1,12 @@
 @extends('admin.templates.principal')
 
+@section('meta-tags')
+<meta name="keywords" content="a2 softway, maquina fiscal">
+<meta name="description" content="{{$article->description}}">
+
+@endsection
+
+
 @section('title', $article->name) 
 
 @section('css')
@@ -13,6 +20,16 @@
 
 
 @section('content') 
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
   
   
 {{--{{$article->articlesDetails}}
@@ -144,7 +161,11 @@
       <hr>
       </div>
       
-      
+      <div class="row up">
+          <span class="bold-span">Descripción</span>
+          <p class="description">{{$article->description}}</p>
+          <hr>
+      </div>
       
       
       <div class="row up">    
@@ -154,7 +175,64 @@
             <a class="" href="{{url('/tags/'.$tag->slug)}}">{{$tag->name}}</a>
             @endforeach
        
+        <hr>
+        </div>
         
+        <div class="row up">
+           
+         
+            <span><a href="https://twitter.com/share?text={{$article->name}} por tan sólo {{$article->price_now}} {{$currency}}" class="popup share" data-show-count="false"><i class="fa fa-twitter"></i></a>
+               
+              <a href="http://www.facebook.com/sharer.php?s=100&p[url]={{Request::url()}}?s=100&p[title]={{$article->name}}" class="popup share"><i class="fa fa-facebook"></i></a>
+               
+               <script>
+                
+	
+  $('.popup').click(function(event) {
+	
+    var width  = 600,
+	
+        height = 400,
+	
+        left   = ($(window).width() - width)  / 2,
+	
+        top    = ($(window).height() - height) / 2,
+	
+        url    = this.href,
+	
+        opts   = 'status=1' +
+	
+                 ',width='  + width  +
+	
+                 ',height=' + height +
+	
+                 ',top='    + top    +
+	
+                 ',left='   + left;
+
+ 
+
+    window.open(url, '', opts);
+	
+ 
+	
+    return false;
+	
+  });
+	
+</script>
+           
+          
+           
+           
+           </span>
+           
+    
+           
+           
+        
+           
+            
         </div>
      
       
@@ -280,6 +358,11 @@
                                  
                                  
                     <div class="about-thumb">
+                     
+                     @if($article_related->discount > 0)
+                    <div class="oferta">{{$article_related->discount}}% de descuento</div>
+                    @endif
+                     
                       <a href="{{url('/articulos/'.$article_related->category->slug.'/'.$article_related->slug)}}">
                        
                         <img class="recent-articles" src="/images/articles/{{$article_related->images[0]->image_url}}" alt="Slide {{$article_related->id}}"/>
@@ -333,4 +416,6 @@
 
 @section('js')
  <script src="{{ asset('js/articles-slider/jquery.flexslider.min.js') }}"></script>
+ 
+ 
 @endsection

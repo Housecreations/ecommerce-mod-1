@@ -41,6 +41,26 @@ class FrontController extends Controller
         
     }
     
+    public function featured(Request $request)     
+    {   
+         if($request->ajax()){
+         $article = Article::find($request->article_id);
+         
+             if($article->featured == 'yes'){
+             $article->featured = 'no';
+             $article->save();
+      
+             return response()->json(['clase'=>'button-featured no-featured', 'texto' => 'No destacado' ]);
+             }else{
+                 $article->featured = 'yes';
+                 $article->save();
+      
+             return response()->json(['clase' => 'button-featured', 'texto' => 'Destacado']);
+             }
+             }
+        
+    }
+    
   
     
     public function edit()

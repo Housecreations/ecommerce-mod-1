@@ -8,11 +8,9 @@
 
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-    <meta name="keywords" content="a2 softway, maquina fiscal">
-	<meta name="description" content="Aquí encontrarás el mejor software administrativo y las mejores máquinas fiscales para tu empresa">
-    <meta name="author" content="housecreations">
-    <meta name="owner" content="D'sistemas y PC, C.A.">
+    @yield('meta-tags')
+    <meta name="author" content="HouseCreations">
+    <meta name="owner" content="HouseCreations">
     
     
 	<!-- Google Fonts -->
