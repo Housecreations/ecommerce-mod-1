@@ -446,6 +446,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         $totalMonthCount = App\Order::totalMonthCount();
         $orderCount = App\Order::orderCount();
         $orderCountAll = App\Order::orderCountAll();
+        $front_images = App\FrontImage::all();
         
         if ($unread > 99) {
             
@@ -455,7 +456,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
       
         $carousel = App\CarouselImage::all();
         $currency = App\Config::find(1);
-        return view('admin.index', ['unread' => $unread, 'carousel' => $carousel, 'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMonthCount, 'orderCount' => $orderCount, 'orderCountAll' => $orderCountAll, 'currency' => $currency->currency]);
+        return view('admin.index', ['unread' => $unread, 'carousel' => $carousel, 'totalMonth' => $totalMonth, 'totalMonthCount' => $totalMonthCount, 'orderCount' => $orderCount, 'orderCountAll' => $orderCountAll, 'currency' => $currency->currency, 'front_images' => $front_images]);
     }]);
     
     Route::resource('users', 'UsersController');

@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Imagenes inicio') 
 
@@ -10,22 +10,29 @@
 
 <div class="container">
 
-<div class="items">
+<div class="admin-container">
 
 
+<div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Imágenes del slider</h2>
+                <p>Edite sus imágenes</p>
+            </div>
 
+    <div class="admin-slider">
    
    
-    <a href="{{ route('admin.index')}}" class="button button-sm three">Atrás</a>
-         <a href="{{ route('admin.front.mas')}}" class="button button-sm three">Nueva imagen</a>
-         <a href="{{ route('admin.front.menos')}}" class="button button-sm three">Eliminar imagen</a>
+    <a href="{{ route('admin.index')}}" class="admin-link link-lg">Atrás</a>
+         <a href="{{ route('admin.front.mas')}}" class="admin-link link-lg">Nueva imagen</a>
+         <a href="{{ route('admin.front.menos')}}" class="admin-link link-lg">Eliminar imagen</a>
 <hr>
    
 
 
 
 
-<div class="row">
+<div class="col-md-12">
     
     
     
@@ -73,6 +80,9 @@
     
     
     
+    </div>
+    </div>
+  </div>
     
   
 

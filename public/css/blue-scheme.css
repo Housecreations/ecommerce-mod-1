@@ -480,19 +480,20 @@ img.slider-img {
     margin-top: 15px;
 }
 
-.sale-data{
+/*.sale-data{
     padding: 1em;
     text-align: center;
     border-right: solid 2px #eee;
     
     
 }
+
 .sale-data span{
     display: block;
     font-size: 2.2em;
     color: #3f51b5;
 }
-
+*/
 .admin-slider h5{
     display: inline-block;
     font-size: 18px;

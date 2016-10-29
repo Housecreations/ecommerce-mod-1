@@ -1,27 +1,28 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Panel administracion') 
 
 
 @section('content') 
 <div class="container">
-<div class='admin-index'>
- @include('admin.templates.partials.adminnav')
 
-
-
-<div class="col-md-12 col-xs-12">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
     
-   
+            <div class="admin-breadcrumb">
+                <h2>Dashboard</h2>
+                <p>Ventas, órdenes e imágenes</p>
+            </div>
 
     
-    <div class="admin-slider">
+            <div class="admin-slider">
        
-        <div class="row">
-        <h4 class="text-center">Ventas</h4>
-           <hr>
-         <div class="col-md-12 col-sm-12">
-          
+            <div class="col-md-12">
+            <h2>Totales <p>Este mes</p></h2>
+             
+              
+            
            
            <div class="col-md-6 sale-data">
                <span>{{$totalMonth}} {{$currency}}</span>
@@ -32,43 +33,42 @@
                Cantidad de ventas
            </div>
            
+         </div>
            
-           <div class="col-md-12 text-center">
-           <hr>
-           <a href="{{url('/admin/orders')}}"><h5>Órdenes del mes</h5> 
-           
-           @if($orderCount > 0)
-            <span class="badge badge-color">{{$orderCount}}</span>
-           @else
-           <span class="badge">{{$orderCount}}</span>
-           @endif
-           
-           </a>
-           
-            <a href="{{url('/admin/orders/all')}}"><h5>Ver todas las órdenes</h5> 
-            
-            @if($orderCountAll > 0)
-            <span class="badge badge-color">{{$orderCountAll}}</span>
-            @else
-            <span class="badge">{{$orderCountAll}}</span>
-            @endif
-            </a>
-            
-            <a href="{{url('/admin/payment')}}"><h5>Buscar un pago</h5> 
-        
-            </a>
-           
-           </div>
-           
-           </div>
          
-       </div>
-       
-       <hr>
-        <div class="row">
-        <h4 class="text-center top-space">Slider</h4>
-           <hr>
-        <div class="templatemo-gallery-item collection col-md-12 front">
+           
+           
+           
+           <div class="col-md-12">
+           
+           <h2>Órdenes</h2>
+           
+           
+           <div class="col-md-6 sale-data">
+             
+               <span>{{$orderCount}}</span>
+                <a class="admin-link" href="{{url('/admin/orders')}}">
+               Ver órdenes del mes
+               </a>
+           </div>
+           
+           <div class="col-md-6 sale-data">
+            
+               <span>{{$orderCount}}</span>
+                <a class="admin-link" href="{{url('/admin/orders/all')}}">
+              Ver todas las órdenes
+               </a>
+           </div>
+            
+           </div>
+           
+           
+        
+        <div class="col-md-12">
+        <hr>
+       <h2>Slider</h2>
+         
+        <div class="front">
         <a href="{{ route('admin.front.edit')}}">
         @if(sizeof($carousel) > 0)
         <img src="images/slider/{{$carousel[0]->image_url}}" alt="">
@@ -80,16 +80,22 @@
        
        </a> </div>
        </div>
-       <hr>
-       <div class="row">
+       
+       
+       <div class="col-md-12">
+           <hr>
+           <h2>Imágenes inicio</h2>
            
-           <h4 class="text-center top-space">Imágenes inicio</h4>
-           
-           <div class="templatemo-gallery-item collection col-md-12 front">
+           <div class="front-images">
            
            <a href="{{route('admin.front-images.edit')}}">
                
-               <img src="" alt="">
+               <div class="col-md-4"><img src="images/front-images/{{$front_images[0]->image_url}}" alt=""></div>
+              <div class="col-md-4"><img src="images/front-images/{{$front_images[1]->image_url}}" alt=""></div>
+               <div class="col-md-4"><img src="images/front-images/{{$front_images[2]->image_url}}" alt=""></div>
+               
+               <div class="col-md-6"><img src="images/front-images/{{$front_images[3]->image_url}}" alt=""></div>
+               <div class="col-md-6"><img src="images/front-images/{{$front_images[4]->image_url}}" alt=""></div>
                
            </a>
       </div>

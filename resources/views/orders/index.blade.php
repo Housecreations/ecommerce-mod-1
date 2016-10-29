@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Órdenes')
@@ -6,12 +6,18 @@
 
 @section('content')
 
-<div class="col-md-1 col-sm-1 col-xs-1"></div>
-<div class="col-md-10  col-sm-10 col-xs-10 users">
+<div class="container">
    
-    <div class="row">
+    <div class="admin-container">
+      
+      <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Órdenes del mes</h2>
+                <p>Gestione sus órdenes</p>
+            </div>
        
-        <div class="col-md-12  col-sm-12 col-xs-12 card">
+        <div class="admin-slider">
         
         
         <a href="{{url('/admin')}}" class="button button-sm">Atrás</a>
@@ -33,7 +39,7 @@
     
     <div class="input-group">
     
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar orden...', 'aria-describedby' => 'searchOrders']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar orden #compra...', 'aria-describedby' => 'searchOrders']) !!}
     
     <span class="input-group-addon" id="searchOrders"><span class="glyphicon glyphicon-search"  aria-hidden="true"></span></span>
     </div>
@@ -45,7 +51,7 @@
             
             @foreach($orders as $order)
    <hr>
-   <div class="row order-row">
+   <div class="col-md-12 card">
     <div class="row">
     <div class="col-md-12">
      <div class="col-md-6">
@@ -193,6 +199,6 @@
         </div>
     </div>
     
-
+</div>
 </div>
 @endsection
