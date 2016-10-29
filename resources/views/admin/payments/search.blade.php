@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Buscar pago') 
 
@@ -6,11 +6,19 @@
 @section('content') 
   
   
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-10 card">    
+<div class="container">
 
-<div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Buscar pagos</h2>
+                <p>Busque un pago que por alguna razón no haya sido procesado correctamente</p>
+            </div>
 
-<div class="col-md-12"><h4 class="text-center">Buscar pago no notificado</h4></div>
+    
+            <div class="admin-slider">
 
 <a href="{{ route('admin.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -35,7 +43,8 @@
 
     </div>
 </div>
-  
+    </div>
+</div>
    
    
 @endsection

@@ -90,8 +90,19 @@
 			
 			<!-- fin navegacion -->
 			
-			
-			@include('flash::message')
+			<!--flash messages -->
+			@if (Session::has('flash_notification.message'))
+    @if (Session::has('flash_notification.overlay'))
+        @include('flash::modal', ['modalClass' => 'flash-modal', 'title' => Session::get('flash_notification.title'), 'body' => Session::get('flash_notification.message')])
+    @else
+        <div class="alert alert-{{ Session::get('flash_notification.level') }} admin-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+            {!! Session::get('flash_notification.message') !!}
+        </div>
+    @endif
+@endif
+           <!--flash messages -->
             @include('admin.templates.partials.errors')
       
             @yield('content')
@@ -113,6 +124,8 @@
 		<script src="{{ asset('js/min/plugins.min.js') }}"></script>
 		<script src="{{ asset('js/medigo-custom.js') }}"></script>
 		<script src="{{ asset('js/wow.min.js') }}"></script>
+		
+		@yield('js')
 		
 		<script src="{{ asset('cpanel/js/classie.js') }}"></script>
 		<script src="{{ asset('cpanel/js/gnmenu.js') }}"></script>

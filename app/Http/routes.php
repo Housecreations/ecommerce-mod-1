@@ -254,10 +254,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     'uses' => 'ConfigsController@index',
     'as' => 'admin.config.index'
     ]);
-    Route::get('/config/shipment', [
-    'uses' => 'ShipmentsController@createShipment',
-    'as' => 'admin.shipment.create'
-    ]);
+    
     Route::post('/config/shipment', [
     'uses' => 'ShipmentsController@storeShipment',
     'as' => 'admin.shipment.store'
@@ -299,7 +296,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     ]);
     
     
-    Route::resource('tags', 'TagsController');
+    Route::resource('tags', 'TagsController',
+                   ['except' => ['create', 'show']]);
+    
+    
     
     
     Route::get('downloads/create', [
@@ -465,7 +465,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     'as' => 'admin.users.destroy'
     ]);
     
-    Route::resource('categories', 'CategoriesController');
+    Route::resource('categories', 'CategoriesController', [
+        'except' => ['destroy', 'create', 'show']
+    ]);
     Route::get('categories/{id}/destroy', [
     'uses' => 'CategoriesController@destroy',
     'as' => 'admin.categories.destroy'

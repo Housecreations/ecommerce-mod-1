@@ -12,18 +12,7 @@ http://www.templatemo.com/preview/templatemo_460_medigo
     
 }
 
-.button-featured {
-    background-color: #ff6600;
-    color: white;
-    position: absolute;
-    top: 35px;
-    left: 0px;
-    border-radius: 0px 0px 0px 5px;
-}
 
-.no-featured {
-    opacity: 0.5;
-}
 
 a.share {
     font-size: 25px;
@@ -521,29 +510,12 @@ img.slider-img {
     
     padding-top: 15px;
 }
-.no-discount {
-    opacity: 0.5;
-}
+
 .admin-item-content h5 {
     padding-top: 25px;
 }
-button.button-discount {
-    background-color: #ff6600;
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 0px 0px 5px 0px;
-}
-.button-visible {
-    /* background: none; */
-    background-color: #ff6600;
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0px;
-    border-radius: 0px 0px 0px 5px;
-}
+
+
 
 .admin-slider{
     background-color: white;
@@ -799,6 +771,28 @@ div#resetAlert {
     width: 100%;
 }*/
 
+header.site-header.clearfix.nav-error {
+    transform: rotate(10deg);
+    top: 50px;
+}
+
+.items.error-content {
+    margin-top: 200px;
+}
+
+img.img-errores {
+    width: 400px;
+    position: fixed;
+    right: 0;
+}
+
+.pre-footer-error{
+    
+        transform: rotate(3deg);
+    
+}
+
+
 .main-navigation.pull-right {
     position: fixed;
     top: 35px;
@@ -815,29 +809,14 @@ div#resetAlert {
    
 }
 
-.admin-item-content {
-    padding-left: 35px;
-    padding-bottom: 35px;
-    padding-right: 35px;
-    background-color: white;
-    /* margin: 5px; */
-    border-radius: 5px;
-    /* width: 32%; */
-    text-align: center;
-    border: solid 2px #e6e6e6;
-    margin-bottom: 10px;
-}
+
 
 .chosen-container {
     width: 100% !important;
     
 }
 
-.admin-item-content img {
-    height: 250px;
-        border: solid 2px #efedeb;
-      
-}
+
 .actions-content{
     padding: 10px;
 }
@@ -1049,15 +1028,6 @@ span.text-center.related-price {
   
    
 }
-button.button-on {
-    position: absolute;
-    right: 0px;
-    background-color: #31b531;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 14px;
-}
 
 button.button-on.button-off{
     background-color: #c34022;
@@ -1096,9 +1066,7 @@ button.button-on:hover{
   
 }
 
-.no-visible{
-    opacity: 0.5;
-}
+
 
 .cart-button, .button{
     

@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Imágenes ' .$article->name )
@@ -7,9 +7,18 @@
 @section('content')
 
 <div class="container">
-<div class="items">    
 
-<div class="col-md-10 col-md-offset-1">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Imágenes</h2>
+                <p>Agregue o elimine imágenes de sus artículos</p>
+            </div>
+
+    
+            <div class="admin-slider">
     
    
     <a href="{{ route('admin.articles.index')}}" class="button button-sm">Atrás</a>
@@ -60,4 +69,6 @@
     </div>
 </div>
 </div>
+</div>
+
 @endsection

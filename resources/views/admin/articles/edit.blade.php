@@ -1,4 +1,5 @@
-@extends('admin.templates.principal')
+
+@extends('admin.templates.admin')
 
 
 @section('title', 'Editar artículo ' .$article->name )
@@ -6,9 +7,18 @@
 
 @section('content')
 <div class="container">
-<div class="items">    
 
-<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 ">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Editar artículo</h2>
+                <p>Realice el cambio que desee en su artículo</p>
+            </div>
+
+    
+            <div class="admin-slider">
     
     <a href="{{ route('admin.articles.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -89,6 +99,7 @@
 {!! Form::close() !!}
 
     </div>
+</div>
 </div>
 </div>
 @endsection

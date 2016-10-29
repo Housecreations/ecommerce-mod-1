@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Agregar articulo')
@@ -8,9 +8,17 @@
 
 <div class="container">
 
-<div class="items col-md-12 col-sm-12 col-xs-12">    
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Agregar artículo</h2>
+                <p>Cree un artículo nuevo</p>
+            </div>
 
-<div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    
+            <div class="admin-slider">
 
 <a href="{{ route('admin.articles.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -75,12 +83,15 @@
     {!! Form::submit('Registrar', ['class' => 'cart-button'])!!}
     
 </div>
+           
 
 {!! Form::close() !!}
 
     </div>
 </div>
 </div>
+</div>
+
 @endsection
 @section('js')
  <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>

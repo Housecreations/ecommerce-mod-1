@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Agregar categoría')
@@ -6,9 +6,18 @@
 
 @section('content')
 <div class="container">
-<div class="items">  
 
-<div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Agregar categoría</h2>
+                <p>Cree una nueva categoría para artículos</p>
+            </div>
+
+    
+            <div class="admin-slider">
 
 <a href="{{ route('admin.categories.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -45,5 +54,6 @@
 </div>
        </div>
         </div>
+          </div>
 @endsection
 

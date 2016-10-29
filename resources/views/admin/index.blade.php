@@ -17,10 +17,10 @@
 
     
             <div class="admin-slider">
-       
+         <a href="{{route('admin.payments.search')}}" class="admin-link search-payment">Buscar pago</a> 
             <div class="col-md-12">
             <h2>Totales <p>Este mes</p></h2>
-             
+           
               
             
            

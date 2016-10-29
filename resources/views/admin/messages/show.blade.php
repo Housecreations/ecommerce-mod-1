@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Mensajes') 
 
@@ -7,7 +7,17 @@
 
 <div class="container">
 
-<div class="items">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Mensaje</h2>
+                <p>Mensaje recibido</p>
+            </div>
+
+    
+            <div class="admin-slider">
 
 
 
@@ -29,6 +39,9 @@
 <div class="body-message">
 {{$message->message}}
 </div>
+</div>
+</div>
+
 </div>
 </div>
 

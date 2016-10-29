@@ -1,18 +1,23 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Mensajes') 
 
 
 @section('content') 
 
-
-
 <div class="container">
 
-<div class="items">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Mensajes</h2>
+                <p>Administre los mensajes recibidos en su aplicación</p>
+            </div>
 
-
-<div class="col-md-12">
+    
+            <div class="admin-slider">
 
     <a href="{{ route('admin.index')}}" class="button button-sm">Atrás</a>
 
@@ -68,6 +73,7 @@
 
 </div>
 </div>
+
 @endsection
 
 @section('js')

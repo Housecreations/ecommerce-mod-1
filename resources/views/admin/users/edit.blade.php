@@ -1,13 +1,24 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Editar usuario ' .$user->name )
 
 
 @section('content')
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-10 card">    
 
-<div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+ <div class="container">
+
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Editar usuario</h2>
+                <p>Haga cambios en los usuarios registrados</p>
+            </div>
+
+    
+            <div class="admin-slider">
 
 <a href="{{ route('admin.users.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -40,5 +51,7 @@
 {!! Form::close() !!}
 
     </div>
+</div>
+</div>
 </div>
 @endsection

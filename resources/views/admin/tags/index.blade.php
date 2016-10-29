@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Lista de tags')
@@ -6,12 +6,39 @@
 
 @section('content')
 
- <div class="">
-   <div class="items-no-nav col-md-10 col-sm-10 col-xs-12 card">
+<div class="container">
 
-<div class="col-md-10 col-md-offset-1">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Tags</h2>
+                <p>Cree, edite o elimine etiquetas para sus artículos</p>
+            </div>
+
+    
+            <div class="admin-slider">
   <a href="{{ route('admin.index')}}" class="button button-sm">Atrás</a>
-   <a href="{{ route('admin.tags.create') }}" class='button button-md'>Nuevo tag</a>
+  
+    
+    <hr>
+    <h2>Agregar tag</h2>
+    {!! Form::open(['route' => 'admin.tags.store', 'method' => 'POST']) !!}
+<div class="form-group">
+
+{!! Form::text('name', null, ['class' => 'form-control', 'required', 'placeholder' => 'Nombre del tag']) !!}
+</div>
+
+
+<div class="form-group text-center">
+    
+    {!! Form::submit('Agregar tag', ['class' => 'cart-button'])!!}
+    
+</div>
+
+{!! Form::close() !!}
+    
      
 <hr>
 
@@ -34,7 +61,7 @@
 <table class='table table-hover'>
     
     <thead>
-        <th>Id</th>
+        
         <th>Nombre</th>
        
         <th>Acción</th>
@@ -42,7 +69,7 @@
     <tbody>
        @foreach($tags as $tag)
            <tr>
-               <td>{{$tag->id}}</td>
+              
                <td>{{$tag->name}}</td>
                
            
@@ -81,4 +108,6 @@
      </div>
 </div>
      </div>
+      </div>
+      
 @endsection

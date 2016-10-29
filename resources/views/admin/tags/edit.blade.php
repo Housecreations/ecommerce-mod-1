@@ -1,13 +1,23 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Editar tag ' .$tag->name )
 
 
 @section('content')
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-12 card">    
+<div class="container">
 
-<div class="col-md-6 col-md-offset-3">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Editar tags</h2>
+                <p>Edite la etiqueta</p>
+            </div>
+
+    
+            <div class="admin-slider">
         
          <a href="{{ route('admin.tags.index')}}" class="button button-sm">Atrás</a>
         <hr> 
@@ -32,5 +42,7 @@
 {!! Form::close() !!}
 </div>
         </div>
-
+</div>
+        </div>
+        
 @endsection

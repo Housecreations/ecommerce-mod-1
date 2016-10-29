@@ -1,13 +1,14 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.errores')
 
-@section('title', "D'Sistemas y PC, CA.") 
+@section('title', "HouseCreations Shop") 
 
 
 @section('content') 
 
-
-<div class="items-no-nav card col-md-10"><h2 class="text-center">Algo ha salido mal :(</h2><p class="text-center">Si estaba tratando de realizar un pago por favor no dude en escribirnos para solucionar esto inmediatamente</p></div>
-
+<div class="container">
+<div class="items error-content"><h2 class="text-center">Bien hecho, ya lo rompiste todo...</h2>
+<p class="text-center">Esta página no existe o ha ocurrido un error horrible y el programador se quedó sin trabajo</p></div>
+</div>
 
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Lista de artículos')
@@ -7,9 +7,19 @@
 @section('content')
 
 
- <div class="container">    
+<div class="container">
 
-<div class="items col-md-12 col-sm-12 col-xs-12">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Artículos</h2>
+                <p>Gestione sus artículos</p>
+            </div>
+
+    
+            <div class="admin-slider">
    
         <a href="{{ route('admin.index')}}" class="button button-sm">Atrás</a>
         <a href="{{ route('admin.articles.create') }}" class='button button-md'>Nuevo Artículo</a>
@@ -138,7 +148,7 @@
             <img src="/images/articles/{{$article->images[0]->image_url}}" alt="">  
                <span>Precio: {{$article->price}} {{$currency}}</span><br>
                 <span>Unidades: {{$article->stock}}</span><br>
-                <span>% descuento: {{$article->discount}}</span>
+                <span>Descuento: {{$article->discount}}%</span>
                 <hr>
                  <span>{{$article->category->name}}</span>
                  <hr>
@@ -169,5 +179,7 @@
 </div>
 
      </div>
+</div>
+ </div>
 </div>
 @endsection

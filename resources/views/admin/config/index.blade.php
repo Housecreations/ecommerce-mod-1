@@ -1,20 +1,29 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 @section('title', 'Configuración') 
 
 
 @section('content') 
   
-  
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-10 card">    
+<div class="container">
 
-<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Configuración</h2>
+                <p>Gestione el funcionamiento de la aplicación</p>
+            </div>
+
+    
+            <div class="admin-slider">
 
 
 <div class="button-container">
 <a href="{{ route('admin.index')}}" class="button button-sm">Atrás</a>
   
- <a href="{{ route('admin.shipment.create')}}" class="button button-lg">Nueva empresa de envío</a>  
+
     
 {!! Form::open(['route' => 'admin.config.status', 'method' => 'POST', 'id' => 'store-status-form']) !!}
 
@@ -38,6 +47,29 @@ Tienda Inactiva
 {!! Form::close() !!}
 </div>
 <hr>
+ <div class="col-md-12">
+ <h2>Envíos</h2>
+  
+     
+     
+     
+     {!! Form::open(['route' => 'admin.shipment.store', 'method' => 'POST']) !!}
+<div class="form-group">
+{!! Form::label('name', 'Nombre de la empresa de envíos') !!}
+{!! Form::text('name', null, ['class' => 'form-control', 'required', 'placeholder' => 'Nombre de la empresa de envíos']) !!}
+</div>
+
+
+<div class="form-group text-center">
+    
+    {!! Form::submit('Agregar empresa envíos', ['class' => 'cart-button'])!!}
+    
+</div>
+
+{!! Form::close() !!}
+     
+     
+     
   
   <table class="table table-hover">
       
@@ -51,11 +83,11 @@ Tienda Inactiva
          @foreach($shipments as $shipment)
           <tr>
               <td>{{$shipment->name}}</td>
-              <td><a href="{{ route('admin.shipment.edit', $shipment->id)}}" title="Editar" class=''><span class='fa-stack fa-lg ' aria-hidden='true'>
+              <td><a href="{{ route('admin.shipment.edit', $shipment->id)}}" title="Editar" class='td-admin'><span class='fa-stack fa-lg ' aria-hidden='true'>
                      <i class="fa fa-square fa-stack-2x"></i>
   <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
                     </span></a>
-               <a href="{{ route('admin.shipment.destroy', $shipment->id) }}" title="Eliminar" onclick="return confirm('Seguro que deseas eliminarlo?')" class=''><span class='fa-stack fa-lg ' aria-hidden='true'>
+               <a href="{{ route('admin.shipment.destroy', $shipment->id) }}" title="Eliminar" onclick="return confirm('Seguro que deseas eliminarlo?')" class='td-admin'><span class='fa-stack fa-lg ' aria-hidden='true'>
                      <i class="fa fa-square fa-stack-2x"></i>
   <i class="fa fa-times fa-stack-1x fa-inverse"></i>
                     </span></a></td>
@@ -64,16 +96,18 @@ Tienda Inactiva
       </tbody>
       
   </table>
-   <hr>
+  <hr>
+  </div>
    
    
    
-    <div class="button-container">
- <a href="{{ route('admin.payments_accounts.create')}}" class="button button-lg">Nueva cuenta bancaria</a>  
+   
+    <div class="col-md-12">
+    <h2>Cuentas bancarias</h2>
+ <a href="{{ route('admin.payments_accounts.create')}}" class="button button-md">Nueva cuenta bancaria</a>  
     
 
-</div>
-<hr>
+
   
   <table class="table table-hover">
       
@@ -95,11 +129,11 @@ Tienda Inactiva
               @else
               <td>Desactivada</td>
               @endif
-              <td><a href="{{ route('admin.payments_accounts.edit', $payments_account->id)}}" title="Editar" class=''><span class='fa-stack fa-lg ' aria-hidden='true'>
+              <td><a href="{{ route('admin.payments_accounts.edit', $payments_account->id)}}" title="Editar" class='td-admin'><span class='fa-stack fa-lg ' aria-hidden='true'>
                      <i class="fa fa-square fa-stack-2x"></i>
   <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
                     </span></a>
-               <a href="{{ route('admin.payments_accounts.active', $payments_account->id) }}" title="Cambiar estado" onclick="return confirm('Seguro que deseas cambiar el estado de la cuenta?')" class=''><span class='fa-stack fa-lg ' aria-hidden='true'>
+               <a href="{{ route('admin.payments_accounts.active', $payments_account->id) }}" title="Cambiar estado" onclick="return confirm('Seguro que deseas cambiar el estado de la cuenta?')" class='td-admin'><span class='fa-stack fa-lg ' aria-hidden='true'>
                      <i class="fa fa-square fa-stack-2x"></i>
   <i class="fa fa-toggle-on fa-stack-1x fa-inverse"></i>
                     </span></a></td>
@@ -108,18 +142,19 @@ Tienda Inactiva
       </tbody>
       
   </table>
+               <hr>
+                </div>
    
    
    
-   <hr>
    
    
    
    
    
-   <div>
-    <h4 class="text-center">Correos de la aplicación</h4>
-       <hr>
+   <div class="col-md-12">
+    <h2>Correos de la aplicación</h2>
+       
       {!! Form::open(['route' => 'admin.config.emails', 'method' => 'POST', 'id' => 'update-emails-form']) !!}
 
 
@@ -135,19 +170,19 @@ Tienda Inactiva
 
 <div class="form-group">
    
-<button type="submit" class="button">
+<button type="submit" class="button button-md">
 Actualizar correos
 </button>
 
     
 </div> 
       {!! Form::close() !!}
-       
-   </div>
-   <hr>
-   <div>
-    <h4 class="text-center">Carritos de compra</h4>
        <hr>
+   </div>
+   
+   <div class="col-md-12">
+    <h2>Carritos de compra</h2>
+       
       {!! Form::open(['url' => '/deleteNoUserCarts', 'method' => 'POST', 'id' => 'delete-carts-form']) !!}
 
 
@@ -156,7 +191,7 @@ Actualizar correos
 
 <div class="form-group">
    
-<button type="submit" class="button">
+<button type="submit" class="button button-md">
 Eliminar carritos obsoletos
 </button>
 
@@ -179,6 +214,9 @@ Eliminar carritos obsoletos
     
     
 </div>
+ </div>
+ </div>
+ 
   
    
    

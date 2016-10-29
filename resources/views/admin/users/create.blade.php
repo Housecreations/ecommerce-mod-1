@@ -1,4 +1,4 @@
-@extends('admin.templates.principal')
+@extends('admin.templates.admin')
 
 
 @section('title', 'Crear usuario')
@@ -6,9 +6,19 @@
 
 @section('content')
 
- <div class="items-no-nav col-sm-10 col-xs-10 col-md-10 card">    
+ <div class="container">
 
-<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <div class='admin-container'>
+ 
+        <div class="col-md-12 col-xs-12">
+    
+            <div class="admin-breadcrumb">
+                <h2>Registrar usuario</h2>
+                <p>Puede crear nuevos miembros o administradores de la aplicación</p>
+            </div>
+
+    
+            <div class="admin-slider">
 
 <a href="{{ route('admin.users.index')}}" class="button button-sm">Atrás</a>
     <hr>
@@ -65,5 +75,7 @@
 
 {!! Form::close() !!}
      </div>
+     </div>
+      </div>
      </div>
 @endsection
