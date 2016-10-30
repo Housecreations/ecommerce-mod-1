@@ -17,6 +17,26 @@ use App\Config;
 class ArticlesController extends Controller
 {
   
+     public function indexSearch(Request $request)
+    {
+      
+        /* if($request->orderType){
+         $articles = Article::searchEngine($request->name)->orderBy($request->sortSelect, $request->orderType)->simplePaginate(4);
+         
+         }else{
+             $articles = Article::searchEngine($request->name)->orderBy("id", 'DESC')->simplePaginate(4);
+         }*/
+         
+         if($request->orderType){
+             $articles = Article::searchEngine($request->name, $request->sortSelect, $request->orderType )->simplePaginate(4);
+         }
+         else{
+          $articles = Article::searchEngine($request->name, 'id', 'DESC' )->simplePaginate(4);
+         }
+         
+        $currency = Config::find(1);
+        return view('admin.articles.indexSearch', ['articles' => $articles, 'currency' => $currency->currency, 'request' => $request]);
+    }
     
     
      public function deleteimage($id, $image_id)
@@ -159,7 +179,7 @@ class ArticlesController extends Controller
         
         $article->delete();
         
-        Flash::error('El articulo ' . $article->name. ' ha sido eliminado');
+        Flash::success('El articulo ' . $article->name. ' ha sido eliminado');
       
         return redirect()->route('admin.articles.index');
          

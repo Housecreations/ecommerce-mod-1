@@ -14,7 +14,7 @@
    <h3>Mis compras</h3>
    </div>
    
-    <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="col-md-6 col-sm-6 col-xs-12">
     <a href="{{route('member.password.edit')}}" class="button button-lg float-right">Cambiar contraseña</a>
    </div>
    </div>

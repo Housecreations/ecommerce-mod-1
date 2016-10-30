@@ -80,7 +80,7 @@ class FrontController extends Controller
              if($request->file('image')){
             
                 $file = $request->file('image');
-                $name = 'DSistemas_' .$id. "." . $file->getClientOriginalExtension();
+                $name = 'E-commerce_' .$id. "." . $file->getClientOriginalExtension();
                 $path = 'images/slider/';
                 $file->move($path, $name);
                 

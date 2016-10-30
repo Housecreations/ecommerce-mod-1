@@ -12,7 +12,7 @@
 */
 
 
-
+Route::get('/buscar-articulos', 'ArticlesController@indexSearch');
 
 
 Route::post('/deleteNoUserCarts', 'ShoppingCartsController@eliminarcarritos');

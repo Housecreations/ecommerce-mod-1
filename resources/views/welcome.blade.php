@@ -126,7 +126,7 @@
                                 
                                 
                                 
-                                <div class="wow fadeInUp col-md-3" data-wow-delay="0.4s">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="about-thumb">
                      
                      @if($article->discount > 0)

@@ -149,7 +149,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->delete();
         
-        Flash::error('El usuario ' . $user->name. ' ha sido eliminado');
+        Flash::success('El usuario ' . $user->name. ' ha sido eliminado');
       
         return redirect()->route('admin.users.index');
     }

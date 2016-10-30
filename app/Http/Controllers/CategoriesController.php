@@ -16,7 +16,7 @@ class CategoriesController extends Controller
 {
    public function index(Request $request)
     {
-        $categoriesrender = Category::search($request->name)->orderBy('id', 'ASC')->paginate(5);
+        $categoriesrender = Category::search($request->name)->orderBy('id', 'DESC')->paginate(5);
         
         return view('admin.categories.index')->with('categoriesrender', $categoriesrender);
     }
@@ -161,7 +161,7 @@ class CategoriesController extends Controller
         
         $category->delete();
         
-        Flash::error('El área ' . $category->name. ' ha sido eliminada');
+        Flash::success('La categoría ' . $category->name. ' ha sido eliminada');
          
         return redirect()->route('admin.categories.index');
     }

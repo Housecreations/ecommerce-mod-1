@@ -42,6 +42,13 @@ class Article extends Model implements SluggableInterface
     }
     
     
+    public function scopeSearchEngine($query, $name, $sortSelect, $orderType){
+    
+    return $query->where('visible', 'yes')->where('name', 'LIKE', "%$name%")->orderBy($sortSelect, $orderType);
+    
+}
+    
+    
     public function scopeSearch($query, $name){
     
     return $query->where('name', 'LIKE', "%$name%");
@@ -54,7 +61,7 @@ class Article extends Model implements SluggableInterface
         if($request->file('image')){
             
             $file = $request->file('image');
-            $name = 'Dsistemas_' .time(). "." . $file->getClientOriginalExtension();
+            $name = 'E-commerce_' .time(). "." . $file->getClientOriginalExtension();
             $path = 'images/articles/';
             $file->move($path, $name);
         

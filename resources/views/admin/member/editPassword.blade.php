@@ -5,8 +5,8 @@
 
 @section('content') 
   
-  
-<div class="items-no-nav col-md-10 col-sm-10 col-xs-10 card">    
+  <div class="container">
+<div class="items">    
 
 <div class="col-md-7 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
 
@@ -43,7 +43,7 @@
 
     </div>
 </div>
-  
+  </div>
    
    
 @endsection

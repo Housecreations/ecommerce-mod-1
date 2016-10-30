@@ -11,7 +11,7 @@ $(window).load(function() { // makes sure the whole site is loaded
             controlNav: false,
             animationLoop: false,
             slideshow: false,
-            itemWidth: 210,
+            itemWidth: 210, /*210*/
     itemMargin: 0,
     minItems: 2,
     maxItems: 4
@@ -50,6 +50,17 @@ $(window).load(function() { // makes sure the whole site is loaded
     
 $(document).ready(function(){    
     
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		showLeft = document.getElementById( 'showLeft' );
+    
+    showLeft.onclick = function() {
+	classie.toggle( this, 'active' );
+	classie.toggle( menuLeft, 'cbp-spmenu-open' );
+
+};
+    
+    
+    
     
      $('#payment_type').change(function(){
     
@@ -71,8 +82,68 @@ $(document).ready(function(){
            
         });
     
+    $('#sort-select').change(function(){
+    
+    var $optionSelected = $(this).find("option:selected").val();
+ 
+         
+         switch($optionSelected){
+                 
+             case 'id-desc':
+                
+                 
+                 $("#sortSelect").val('id');
+                 $("#orderType").val('DESC');
+                 
+                 break;
+                 
+             case 'id-asc':
+                 
+                 $("#sortSelect").val('id');
+                 $("#orderType").val('ASC');
+                 
+                 break;
+                 
+             case 'price-desc':
+                 
+                 $("#sortSelect").val('price_now');
+                 $("#orderType").val('DESC');
+                 
+                 break;
+                 
+             case 'price-asc':
+                 
+                 $("#sortSelect").val('price_now');
+                 $("#orderType").val('ASC');
+                 
+                 break;
+             
+             default:
+                 break;
+                 
+         }
+        
+        if(getQueryVariable('name') != false){
+        $("#search-articles-submit").val(getQueryVariable('name'))
+        }
+        $("#search-articles-form").submit();
+        
+        
+    
+        });
     
     
+    function getQueryVariable(variable) {
+   var query = window.location.search.substring(1);
+   var vars = query.split("&");
+   for (var i=0; i < vars.length; i++) {
+       var pair = vars[i].split("=");
+       if(pair[0] == variable) {
+           return pair[1];
+       }
+   }
+   return false;
+}
     
     
     

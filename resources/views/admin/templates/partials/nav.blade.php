@@ -139,6 +139,29 @@
 	</header> <!-- /.site-header -->
 
 
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	
+	{!! Form::open(['url' => '/buscar-articulos', 'method' => 'GET', 'class' => '', 'id' => 'search-articles']) !!}
+
+ 
+   
+  
+    
+     <input type="hidden" id="sortSelect" name="sortSelect" value="id">
+    <input type="hidden" id="orderType" name="orderType" value="DESC">
+    
+    
+    
+    
+    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar articulo...', 'id' => 'search-articles-sub']) !!}
+
+    
+    
+   
+{!! Form::close() !!}
+	<button id="showLeft"><i class="fa fa-search"></i></button>
+</nav>
+
 
 
 
